@@ -1,9 +1,9 @@
 const request = require('supertest');
-const app = require('../answer.app');
-// const app = require('../app');
+// const app = require('../answer.app');
+const app = require('../app');
 
 describe('GET /', () => {
-  it('should return the home page with a welcome message', async () => {
+  it('localhost:3000 にアクセスしたら「hello world」と表示されるようにしてください', async () => {
     const res = await request(app).get('/');
     expect(res.statusCode).toBe(200);
     expect(res.text).toContain('hello world');
@@ -11,7 +11,7 @@ describe('GET /', () => {
 });
 
 describe('GET /info', () => {
-  it('should return the home page with a welcome message', async () => {
+  it('localhost:3000/info にアクセスしたら「this is localhost:3000/info page」と表示されるようにしてください', async () => {
     const res = await request(app).get('/info');
     expect(res.statusCode).toBe(200);
     expect(res.text).toContain("this is localhost:3000/info page");
@@ -19,7 +19,7 @@ describe('GET /info', () => {
 });
 
 describe('GET /user', () => {
-  it('should return the user page with the specified name', async () => {
+  it('localhost:3000 にアクセスしたら「Welcome, Ken the Wanko!」と表示されるようにしてください', async () => {
     const res = await request(app).get('/user');
     expect(res.statusCode).toBe(200);
     expect(res.text).toContain('Welcome, Ken the Wanko!');
@@ -27,7 +27,7 @@ describe('GET /user', () => {
 });
 
 describe('GET /form', () => {
-  it('should return the form page', async () => {
+  it('localhost:3000/form にアクセスしたら、form.ejsが表示されるようにしてください', async () => {
     const res = await request(app).get('/form');
     expect(res.statusCode).toBe(200);
     expect(res.text).toContain('Fill out the form');
@@ -35,7 +35,7 @@ describe('GET /form', () => {
 });
 
 describe('POST /submit', () => {
-  it('should process the form and display submitted data', async () => {
+  it('postリクエストでlocalhost:3000/submit にリクエストを送信した時に、送信された内容が表示されるようにしてください', async () => {
     const res = await request(app)
       .post('/submit')
       .type('form')
