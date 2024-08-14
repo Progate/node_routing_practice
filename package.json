@@ -1,0 +1,22 @@
+{
+  "name": "practice-express-routing",
+  "version": "1.0.0",
+  "description": "set of problems for practice express routing.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --silent",
+    "watch": "nodemon app.js",
+    "dev": "nodemon --inspect answer.app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
+  }
+}
